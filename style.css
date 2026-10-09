@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Poppins", sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #22121d,
+        #d9d6ff,
+        #c7ecff
+    );
+}
+
+/* Calculator */
+
+.calculator {
+    width: 320px;
+    padding: 20px;
+
+    border-radius: 40px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 25px 60px rgba(80, 70, 130, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9);
+
+    backdrop-filter: blur(15px);
+}
+
+.title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Display */
+
+.display {
+    height: 170px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #c9b8ff,
+        #e8c9ee
+    );
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.previous-operand {
+    min-height: 30px;
+
+    font-size: 20px;
+
+    opacity: 0.75;
+}
+
+.current-operand {
+    font-size: 48px;
+    font-weight: 500;
+
+    max-width: 100%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Buttons */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.button {
+    height: 60px;
+    width: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    font-family: inherit;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+/* Number buttons */
+
+.number {
+    background: #8c8bea;
+
+    color: white;
+
+    box-shadow:
+        0 7px 15px rgba(100, 95, 200, 0.25);
+}
+
+/* Function buttons */
+
+.function {
+    background: #e8a4bd;
+
+    color: white;
+
+    box-shadow:
+        0 7px 15px rgba(210, 120, 160, 0.25);
+}
+
+/* Operators */
+
+.operator {
+    background: #8ed5d0;
+
+    color: white;
+
+    box-shadow:
+        0 7px 15px rgba(80, 170, 165, 0.25);
+}
+
+/* Equals */
+
+.equals {
+    background: #f0b36c;
+
+    color: white;
+
+    box-shadow:
+        0 7px 15px rgba(220, 150, 70, 0.25);
+}
+
+/* Zero button */
+
+.zero {
+    grid-column: span 2;
+
+    width: 100%;
+
+    border-radius: 35px;
+}
+
+/* Button hover */
+
+.button:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.05);
+}
+
+/* Button click */
+
+.button:active {
+    transform: scale(0.92);
+}
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    .calculator {
+        width: 94%;
+        padding: 20px;
+    }
+
+    .button {
+        width: 55px;
+        height: 55px;
+    }
+
+    .display {
+        height: 150px;
+    }
+
+    .current-operand {
+        font-size: 40px;
+    }
+}
